@@ -13,9 +13,10 @@ package com.bridgelabz;
 * 
 *UC5:- Ability to delete a person using
        person's name - Use Console to delete a person
- *UC6:-Refactor to add multiple Address Book to the System.
+*UC6:-Refactor to add multiple Address Book to the System.
   Each Address Book has a unique Name - Use Console to add new Address Book - Maintain Dictionary of Address Book Name to
-  UC7:-Ability to ensure there is no Duplicate Entry of the same Person in a particular Address book.     
+*UC7:-Ability to ensure there is no Duplicate Entry of the same Person in a particular Address book.
+*UC8:-Ability to search Person in a City or State across the multiple AddressBook
   
 */
 import java.util.ArrayList;
@@ -90,6 +91,20 @@ public class AddressBook {
 			}
 		}
 	}
+
+	/*
+	 * Search the person deatils
+	 */
+
+	public void searchPersonInCityOrState(String city, String state) {
+		List<Person> seachPerson = adressBook.stream().filter(person -> person.getCity().equals(city))
+				.filter(person -> person.getState().equals(state)).collect(Collectors.toList());
+		System.out.println("After searching person in a city or state is:" + seachPerson);
+	}
+
+	/*
+	 * Remove the dublicate elements
+	 */
 
 	public void removeDuplicates(String personName) {
 		List<Person> AfterRemoveDuplicates = adressBook.stream()
