@@ -13,14 +13,16 @@ package com.bridgelabz;
 * 
 *UC5:- Ability to delete a person using
        person's name - Use Console to delete a person
- UC6:-Refactor to add multiple Address Book to the System.
-  Each Address Book has a unique Name - Use Console to add new Address Book - Maintain Dictionary of Address Book Name to      
+ *UC6:-Refactor to add multiple Address Book to the System.
+  Each Address Book has a unique Name - Use Console to add new Address Book - Maintain Dictionary of Address Book Name to
+  UC7:-Ability to ensure there is no Duplicate Entry of the same Person in a particular Address book.     
+  
 */
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.ArrayList;
+import java.util.stream.Collectors;
 import java.util.HashMap;
-import java.util.Scanner;
+import java.util.List;
 
 public class AddressBook {
 	static Scanner sc = new Scanner(System.in);
@@ -87,6 +89,13 @@ public class AddressBook {
 				System.out.println("Invalid Input");
 			}
 		}
+	}
+
+	public void removeDuplicates(String personName) {
+		List<Person> AfterRemoveDuplicates = adressBook.stream()
+				.filter(person -> person.getFirstName().equalsIgnoreCase(personName)).distinct()
+				.collect(Collectors.toList());
+		System.out.println("After a removing duplicate elements" + AfterRemoveDuplicates);
 	}
 
 	/**
@@ -199,6 +208,10 @@ public class AddressBook {
 		}
 		System.out.println(adressBook);
 	}
+
+	/*
+	 * Disply the method contact deatils for person
+	 */
 
 	public void display() {
 		for (int i = 0; i < adressBook.size(); i++) {
