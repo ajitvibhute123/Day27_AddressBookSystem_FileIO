@@ -9,6 +9,9 @@ import java.util.Scanner;
 * UC2:- Ability to add a new Contact to Address Book
 * 
 * UC3:- Ability to edit existing contact person using their name
+* 
+* UC4:-Ability to delete a person using person's name
+* - Use Console to delete a person
 */
 
 public class AddressBook {
@@ -21,6 +24,9 @@ public class AddressBook {
 		addressBookList.addContactDetails();
 	}
 
+	/*
+	 * Added add Contact Details method
+	 */
 	public void addContactDetails() {
 		Person details = new Person();
 		System.out.println("Enter a first name:");
@@ -110,6 +116,21 @@ public class AddressBook {
 			System.out.println("Edited list is:");
 			System.out.println(adressBook);
 		}
+	}
+
+	/*
+	 * Added : DeleteContact Method
+	 */
+	public void deleteContact() {
+		System.out.println("confirm the name to delete contact");
+		String confirmName = sc.next();
+		for (int i = 0; i < adressBook.size(); i++) {
+			if (adressBook.get(i).getFirstName().equals(confirmName))
+				;
+			Person person = adressBook.get(i);
+			adressBook.remove(person);
+		}
+		System.out.println(adressBook);
 	}
 
 }
