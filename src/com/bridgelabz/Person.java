@@ -138,7 +138,7 @@ public class Person {
 		this.firstName = firstName2;
 		this.lastName = lastName2;
 		this.address = address2;
-		this.city = city2;
+		this.city = city2; 
 		this.state = state2;
 		this.zip = zip2;
 		this.phoneNumber = phoneNumber2;
