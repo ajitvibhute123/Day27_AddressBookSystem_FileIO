@@ -12,6 +12,9 @@ import java.util.Scanner;
 * 
 * UC4:-Ability to delete a person using person's name
 * - Use Console to delete a person
+* 
+*UC:- Ability to delete a person using
+       person's name - Use Console to delete a person
 */
 
 public class AddressBook {
@@ -24,9 +27,6 @@ public class AddressBook {
 		addressBookList.addContactDetails();
 	}
 
-	/*
-	 * Added add Contact Details method
-	 */
 	public void addContactDetails() {
 		Person details = new Person();
 		System.out.println("Enter a first name:");
@@ -131,6 +131,22 @@ public class AddressBook {
 			adressBook.remove(person);
 		}
 		System.out.println(adressBook);
+	}
+
+	/*
+	 * Added : Display Method AddressBook
+	 */
+
+	public void display() {
+		for (int i = 0; i < adressBook.size(); i++) {
+			Person person = adressBook.get(i);
+			System.out.println("FirstName" + ":=" + person.getFirstName() + "\n" + "lastname" + ":= "
+					+ person.getLastName() + "\n" + "Address" + ":= " + person.getAddress() + "\n" + "City" + ":= "
+					+ person.getCity() + "\n" + "State" + ":=" + person.getState() + "\n" + "Zip" + ":= "
+					+ person.getZip() + "\n" + "PhoneNumber" + ":= " + person.getPhoneNumber() + "\n" + "Email" + ":= "
+					+ person.getEmail());
+		}
+
 	}
 
 }
