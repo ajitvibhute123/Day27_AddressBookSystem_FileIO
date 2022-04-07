@@ -2,6 +2,7 @@ package com.bridgelabz;
 
 /*
 * UC1:- Ability to create a Contacts in Address Book with first and last names,
+
 * address, city, state, zip, phone number and email...
 * 
 * UC2:- Ability to add a new Contact to Address Book
@@ -22,6 +23,7 @@ package com.bridgelabz;
 *UC11:-Ability to sort the entries in the address book alphabetically by Person�s name
 *UC12:-Ability to sort the entries in the address book by City,
        State, or Zip
+*UC13:-Ability to Read or Write the Address Book with  Persons Contact into a File using File IO       
 */
 import java.util.ArrayList;
 import java.util.Scanner;
